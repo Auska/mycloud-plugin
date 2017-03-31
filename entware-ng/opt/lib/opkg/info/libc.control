@@ -1,0 +1,10 @@
+Package: libc
+Version: 2.23-6
+Depends: libgcc
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: armv7soft
+Installed-Size: 1208955
+Description:  C library

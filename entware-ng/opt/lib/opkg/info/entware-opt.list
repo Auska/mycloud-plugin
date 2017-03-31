@@ -1,0 +1,4 @@
+/opt/etc/init.d/rc.unslung
+/opt/etc/ld.so.conf
+/opt/etc/init.d/rc.func
+/opt/etc/profile

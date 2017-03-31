@@ -1,0 +1,12 @@
+Package: libdb47
+Version: 4.7.25.4.NC-5
+Depends: libc, libssp, librt, libpthread, libxml2
+Provides: libdb47-full
+Source: feeds/packages/libs/db47
+License: Sleepycat
+LicenseFiles: LICENSE
+Section: libs
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: armv7soft
+Installed-Size: 523754
+Description:  Berkeley DB library (4.7).

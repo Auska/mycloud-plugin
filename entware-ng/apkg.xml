@@ -11,9 +11,9 @@
       <name>entware-ng</name>
       <show>entware-ng</show>
       <enable>1</enable>
-      <version>1.0</version>
-      <date>20160924</date>
-      <inst_date>09/24/2016 09:25:31</inst_date>
+      <version>1.0.0</version>
+      <date>20161105</date>
+      <inst_date>02/25/2017 17:27:16</inst_date>
       <path>/mnt/HD/HD_a2/Nas_Prog/entware-ng</path>
       <ps_name></ps_name>
       <url></url>

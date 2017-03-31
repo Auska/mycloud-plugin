@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo -n "Updating /opt/etc/ld.so.cache... "
+/opt/bin/ldconfig > /dev/null 2>&1
+echo "done."

@@ -1,0 +1,9 @@
+Package: entware-opt
+Version: 222108-5
+Depends: libc, libssp, librt, libpthread, libgcc, libstdcpp, libpthread, librt, ldconfig, findutils, terminfo, locales, opkg
+Source: feeds/rtndev/entware-opt
+Section: libs
+Maintainer: Entware team, http://entware.net
+Architecture: armv7soft
+Installed-Size: 1780
+Description:  entware-opt is a metapackage to install Entware basic libraries and scripts.

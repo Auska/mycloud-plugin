@@ -1,0 +1,13 @@
+Package: python-light
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-base, libffi, libbz2
+Source: feeds/packages/lang/python
+License: PSF
+LicenseFiles: LICENSE Modules/_ctypes/libffi_msvc/LICENSE Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi/LICENSE Modules/_ctypes/libffi_osx/LICENSE Tools/pybench/LICENSE
+Section: lang
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Architecture: armv7soft
+Installed-Size: 1268892
+Description:  This package is essentially the python-base package plus
+ a few of the rarely used (and big) libraries stripped out
+ into separate packages.

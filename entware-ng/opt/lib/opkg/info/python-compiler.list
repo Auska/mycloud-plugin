@@ -1,0 +1,11 @@
+/opt/lib/python2.7/compiler/future.py
+/opt/lib/python2.7/compiler/pyassem.py
+/opt/lib/python2.7/compiler/consts.py
+/opt/lib/python2.7/compiler/symbols.py
+/opt/lib/python2.7/compiler/transformer.py
+/opt/lib/python2.7/compiler/__init__.py
+/opt/lib/python2.7/compiler/pycodegen.py
+/opt/lib/python2.7/compiler/syntax.py
+/opt/lib/python2.7/compiler/misc.py
+/opt/lib/python2.7/compiler/visitor.py
+/opt/lib/python2.7/compiler/ast.py

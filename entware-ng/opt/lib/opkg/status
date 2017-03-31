@@ -1,0 +1,355 @@
+Package: terminfo
+Version: 6.0-1c
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941194
+Auto-Installed: yes
+
+Package: ldconfig
+Version: 2.23-6
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941191
+Auto-Installed: yes
+
+Package: libc
+Version: 2.23-6
+Depends: libgcc
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941181
+Auto-Installed: yes
+
+Package: locales
+Version: 2.23-6
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941198
+Auto-Installed: yes
+
+Package: opkg
+Version: 2011-04-08-9c97d5ec-17
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941199
+Auto-Installed: yes
+
+Package: python-pip
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python, python-setuptools, python-pip-conf
+Status: install user installed
+Architecture: armv7soft
+Installed-Time: 1490941332
+
+Package: libpthread
+Version: 2.23-6
+Depends: libgcc
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941185
+Auto-Installed: yes
+
+Package: python-codecs
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941278
+Auto-Installed: yes
+
+Package: python-db
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libdb47
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941297
+Auto-Installed: yes
+
+Package: python-decimal
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941309
+Auto-Installed: yes
+
+Package: python-light
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-base, libffi, libbz2
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941260
+Auto-Installed: yes
+
+Package: python-distutils
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941290
+Auto-Installed: yes
+
+Package: python-pydoc
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941273
+Auto-Installed: yes
+
+Package: python
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, python-ctypes, python-pydoc, python-multiprocessing, python-codecs, python-sqlite3, python-logging, python-gdbm, python-email, python-distutils, python-xml, python-compiler, python-db, python-openssl, python-decimal, python-unittest, python-ncurses
+Status: install user installed
+Architecture: armv7soft
+Installed-Time: 1490941315
+
+Package: python-base
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, libpthread, zlib
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941264
+Auto-Installed: yes
+
+Package: python-pip-conf
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941331
+Auto-Installed: yes
+
+Package: python-unittest
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941310
+Auto-Installed: yes
+
+Package: libxml2
+Version: 2.9.4-1
+Depends: libc, libssp, librt, libpthread, libpthread, zlib
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941303
+Auto-Installed: yes
+
+Package: python-email
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941288
+Auto-Installed: yes
+
+Package: python-ctypes
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941270
+Auto-Installed: yes
+
+Package: python-gdbm
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libgdbm
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941285
+Auto-Installed: yes
+
+Package: python-ncurses
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libncurses
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941311
+Auto-Installed: yes
+
+Package: libstdcpp
+Version: 6.3.0-6
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941188
+Auto-Installed: yes
+
+Package: libgcc
+Version: 6.3.0-6
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941182
+Auto-Installed: yes
+
+Package: libffi
+Version: 3.2.1-2
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941266
+Auto-Installed: yes
+
+Package: python-setuptools
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941330
+Auto-Installed: yes
+
+Package: librt
+Version: 2.23-6
+Depends: libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941184
+Auto-Installed: yes
+
+Package: python-sqlite3
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libsqlite3
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941279
+Auto-Installed: yes
+
+Package: python-compiler
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941295
+Auto-Installed: yes
+
+Package: libncurses
+Version: 6.0-1c
+Depends: libc, libssp, librt, libpthread, libncursesw
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941312
+Auto-Installed: yes
+
+Package: python-xml
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libexpat
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941292
+Auto-Installed: yes
+
+Package: python-openssl
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libopenssl
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941304
+Auto-Installed: yes
+
+Package: python-multiprocessing
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941274
+Auto-Installed: yes
+
+Package: libncursesw
+Version: 6.0-1c
+Depends: libc, libssp, librt, libpthread, terminfo
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941315
+Auto-Installed: yes
+
+Package: zlib
+Version: 1.2.11-1
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941265
+Auto-Installed: yes
+
+Package: findutils
+Version: 4.6.0-1
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941193
+Auto-Installed: yes
+
+Package: libssp
+Version: 6.3.0-6
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941183
+Auto-Installed: yes
+
+Package: python-logging
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941284
+Auto-Installed: yes
+
+Package: libsqlite3
+Version: 3160000-1
+Depends: libc, libssp, librt, libpthread, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941282
+Auto-Installed: yes
+
+Package: libexpat
+Version: 2.2.0-1
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941294
+Auto-Installed: yes
+
+Package: libbz2
+Version: 1.0.6-2
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941268
+Auto-Installed: yes
+
+Package: entware-opt
+Version: 222108-5
+Depends: libc, libssp, librt, libpthread, libgcc, libstdcpp, libpthread, librt, ldconfig, findutils, terminfo, locales, opkg
+Status: install user installed
+Architecture: armv7soft
+Conffiles:
+ /opt/etc/profile edc3892976f80334205732addb868921fb12f9f5392c5d360cd1c52d5316a590
+Installed-Time: 1490941199
+
+Package: libgdbm
+Version: 1.11-1
+Depends: libc, libssp, librt, libpthread
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941286
+Auto-Installed: yes
+
+Package: libopenssl
+Version: 1.0.2k-1
+Depends: libc, libssp, librt, libpthread, zlib
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941308
+Auto-Installed: yes
+
+Package: libdb47
+Version: 4.7.25.4.NC-5
+Depends: libc, libssp, librt, libpthread, libxml2
+Provides: libdb47-full
+Status: install ok installed
+Architecture: armv7soft
+Installed-Time: 1490941300
+Auto-Installed: yes
+

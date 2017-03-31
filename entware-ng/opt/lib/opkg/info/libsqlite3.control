@@ -1,0 +1,13 @@
+Package: libsqlite3
+Version: 3160000-1
+Depends: libc, libssp, librt, libpthread, libpthread
+Source: feeds/packages/libs/sqlite3
+License: PUBLICDOMAIN
+Section: libs
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Architecture: armv7soft
+Installed-Size: 403574
+Description:  SQLite is a small C library that implements a self-contained, embeddable,
+ zero-configuration SQL database engine.
+ This package contains the SQLite (v3.x) shared library, used by other
+ programs.

@@ -1,0 +1,10 @@
+Package: libncursesw
+Version: 6.0-1c
+Depends: libc, libssp, librt, libpthread, terminfo
+Source: package/libs/ncurses
+License: MIT
+LicenseFiles: README
+Section: libs
+Architecture: armv7soft
+Installed-Size: 193039
+Description:  Terminal handling library (Unicode)

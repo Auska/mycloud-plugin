@@ -1,0 +1,11 @@
+Package: python-sqlite3
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, libsqlite3
+Source: feeds/packages/lang/python
+License: PSF
+LicenseFiles: LICENSE Modules/_ctypes/libffi_msvc/LICENSE Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi/LICENSE Modules/_ctypes/libffi_osx/LICENSE Tools/pybench/LICENSE
+Section: lang
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Architecture: armv7soft
+Installed-Size: 44230
+Description:  Python 2.7 sqlite3 module

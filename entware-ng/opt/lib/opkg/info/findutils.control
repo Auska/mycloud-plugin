@@ -1,0 +1,13 @@
+Package: findutils
+Version: 4.6.0-1
+Depends: libc, libssp, librt, libpthread
+Source: feeds/packages/utils/findutils
+Section: utils
+Maintainer: Daniel Dickinson <lede@daniel.thecshore.com>
+Architecture: armv7soft
+Installed-Size: 140217
+Description:  Replace busybox versions of findutils with full GNU versions.
+ This is normally not needed as busybox is smaller and provides
+ sufficient functionality, but some users may want or need
+ the full functionality of the GNU tools.
+ This package installs find and xargs utilities

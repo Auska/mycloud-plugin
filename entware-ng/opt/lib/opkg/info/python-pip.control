@@ -1,0 +1,11 @@
+Package: python-pip
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python, python-setuptools, python-pip-conf
+Source: feeds/packages/lang/python
+License: PSF
+LicenseFiles: LICENSE Modules/_ctypes/libffi_msvc/LICENSE Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi/LICENSE Modules/_ctypes/libffi_osx/LICENSE Tools/pybench/LICENSE
+Section: lang
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Architecture: armv7soft
+Installed-Size: 2134245
+Description:  Python 2.7 pip module

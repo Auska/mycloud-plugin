@@ -1,0 +1,12 @@
+Package: python
+Version: 2.7.13-4
+Depends: libc, libssp, librt, libpthread, python-light, python-ctypes, python-pydoc, python-multiprocessing, python-codecs, python-sqlite3, python-logging, python-gdbm, python-email, python-distutils, python-xml, python-compiler, python-db, python-openssl, python-decimal, python-unittest, python-ncurses
+Source: feeds/packages/lang/python
+License: PSF
+LicenseFiles: LICENSE Modules/_ctypes/libffi_msvc/LICENSE Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi/LICENSE Modules/_ctypes/libffi_osx/LICENSE Tools/pybench/LICENSE
+Section: lang
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Architecture: armv7soft
+Installed-Size: 104
+Description:  This package contains the (almost) full Python install.
+ It's python-light + all other packages.
