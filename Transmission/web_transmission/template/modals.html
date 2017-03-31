@@ -1,0 +1,276 @@
+<script type="text/html" id="about">
+    <div class="content">
+        <img src="dist/img/logo192.png" alt="{{'Transmission ' + dataStorage.global.version}}" title="{{'Transmission ' + dataStorage.global.version}}">
+        <p>
+            Transmission {{dataStorage.global.version}}
+        </p>
+        <p>
+            快速、简单易用的 BitTorrent 客户端
+        </p>
+        <p>
+            Copyright (c) <a target="_blank" href="https://transmissionbt.com/">Transmission</a> 项目版权所有
+        </p>
+        <p>
+            AngularJS 版本UI由 <a target="_blank" href="https://github.com/lionzhong/Transmission-WebUI-Angular">lionzhong</a> 开发
+        </p>
+    </div>
+    <div class="btn-row display-cancel-btn">
+        <div class="cancel" ng-click="modal.close()">{{modal.btnText.cancel}}</div>
+    </div>
+</script>
+<script type="text/html" id="addFiles">
+    <div class="title">{{modal.title}}</div>
+    <div class="content">
+        <div>
+            <label for="addTorrentFiles">选择种子文件上传</label>
+            <input id="addTorrentFiles" name="addTorrentFiles" type="file" class="file" ng-model="dataStorage.addTransform.files" multiple="multiple">
+        </div>
+        <div>
+            <label for="addTorrentUrl">或者输入URL</label>
+            <input id="addTorrentUrl" name="addTorrentUrl" type="url" class="input">
+        </div>
+        <div>
+            <label for="addTorrentLocation">存储位置 <span>可用存储空间（{{bytesConvert(dataStorage.global['download-dir-free-space'])}}）</span></label>
+            <input id="addTorrentLocation" name="addTorrentLocation" type="text" class="input" ng-model="dataStorage.addTransform['download-dir']">
+        </div>
+        <div>
+            <input id="startWhenAdded" name="startWhenAdded" type="checkbox" class="checkbox" ng-model="dataStorage.addTransform.paused">
+            <label for="startWhenAdded" type="checkbox">添加后直接开始下载</label>
+        </div>
+    </div>
+    <div class="btn-row display-all-btn">
+        <div class="cancel" ng-click="modal.close()">{{modal.btnText.cancel}}</div>
+        <div class="submit" ng-click="modal.submitFunc()">{{modal.btnText.submit}}</div>
+    </div>
+</script>
+<script type="text/html" id="modal_t">
+    <div class="title">{{modal.title}}</div>
+    <div class="content">
+        {{modal.content}}
+    </div>
+    <div class="btn-row" ng-class="{'display-cancel-btn':modal.btnType === 0,'display-submit-btn':modal.btnType === 1,'display-all-btn':modal.btnType === 2}">
+        <div class="cancel" ng-if="modal.btnType !== 0" ng-click="modal.close()">{{modal.btnText.cancel}}</div>
+        <div class="submit" ng-if="modal.btnType !== 1" ng-click="modal.submitFunc()">{{modal.btnText.submit}}</div>
+    </div>
+</script>
+<script type="text/html" id="settings">
+    <div class="content" mn-touch swipe-left="tag.swipLeft();$event.stopPropagation();" swipe-right="tag.swipRight();$event.stopPropagation();" >
+        <ul class="tags" id="tags">
+            <li ng-repeat="item in tag.name track by $index" ng-class="{'selected':$index ===tag.index}" ng-click="tag.toggle($index)">{{item}}</li>
+        </ul>
+        <div ng-class="{'content1':tag.index ===0,'content2':tag.index ===1,'content3':tag.index ===2,'content4':tag.index ===3}">
+            <section class="tag-content tag-content1">
+                <h3>下载</h3>
+                <div>
+                    <div>
+                        <span class="badge">可用容量：{{bytesConvert(dataStorage.settings['download-dir-free-space'])}}</span>
+                        <label for="download-dir">下载目录</label>
+                        <input id="download-dir" name="download-dir" class="input" type="text" ng-model="dataStorage.settings['download-dir']">
+                    </div>
+                    <div>
+                        <div>
+                            <input id="start-added-torrents" name="start-added-torrents" class="checkbox" type="checkbox" ng-model="dataStorage.settings['start-added-torrents']">
+                            <label for="start-added-torrents">添加完成后直接开始下载</label>
+                        </div>
+                        <div>
+                            <input id="rename-partial-files" name="rename-partial-files" class="checkbox" type="checkbox" ng-model="dataStorage.settings['rename-partial-files']">
+                            <label for="rename-partial-files">对未完成的文件添加 ".part" 后缀名</label>
+                        </div>
+                    </div>
+                </div>
+                <h3>做种</h3>
+                <div>
+                    <div>
+                        <input id="seedRatioLimited" name="seedRatioLimited" class="checkbox" type="checkbox" ng-model="dataStorage.settings['seedRatioLimited']">
+                        <label for="seedRatioLimited">达到此分享率时停止做种:</label>
+                        <input id="seedRatioLimit" name="seedRatioLimit" class="input" type="text" ng-disabled="dataStorage.settings['seedRatioLimited'] === false" ng-model="dataStorage.settings['seedRatioLimit']">
+                    </div>
+                    <div>
+                        <input id="idle-seeding-limit-enabled" name="idle-seeding-limit-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['idle-seeding-limit-enabled']">
+                        <label for="idle-seeding-limit-enabled">到达此时长以后停止做种:</label>
+                        <input id="idle-seeding-limit" name="idle-seeding-limit" class="input" type="text" ng-disabled="dataStorage.settings['idle-seeding-limit-enabled'] === false" ng-model="dataStorage.settings['idle-seeding-limit']">
+                    </div>
+                </div>
+            </section>
+            <section class="tag-content tag-content2">
+                <h3>限速</h3>
+                <div>
+                    <div>
+                        <input id="speed-limit-up-enabled" name="speed-limit-up-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['speed-limit-up-enabled']">
+                        <label for="speed-limit-up-enabled">上传（KB/s）</label>
+                        <input class="input" type="text" name="speed-limit-up" ng-disabled="dataStorage.settings['speed-limit-up-enabled'] === false" ng-model="dataStorage.settings['speed-limit-up']">
+                    </div>
+                    <div>
+                        <input id="speed-limit-down-enabled" name="speed-limit-down-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['speed-limit-down-enabled']">
+                        <label for="speed-limit-down-enabled">下载（KB/s）</label>
+                        <input name="speed-limit-down" class="input" type="text" ng-disabled="dataStorage.settings['speed-limit-down-enabled'] === false" ng-model="dataStorage.settings['speed-limit-down']">
+                    </div>
+                </div>
+                <h3>计划性限速</h3>
+                <h4>覆盖手动限速或者在计划时间内限速</h4>
+                <div>
+                    <div>
+                        <label for="alt-speed-up">上传（KB/s）</label>
+                        <input id="alt-speed-up" name="alt-speed-up" class="input" type="text" ng-model="dataStorage.settings['alt-speed-up']">
+                    </div>
+                    <div>
+                        <label for="alt-speed-down">下载（KB/s）</label>
+                        <input id="alt-speed-down" name="alt-speed-down" class="input" type="text" ng-model="dataStorage.settings['alt-speed-down']">
+                    </div>
+                    <div>
+                        <input id="alt-speed-time-enabled" name="alt-speed-time-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['alt-speed-time-enabled']">
+                        <label for="alt-speed-time-enabled">计划时段:</label>
+                    </div>
+                    <div>
+                        <label for="alt-speed-time-begin">开始时间</label>
+                        <select id="alt-speed-time-begin" class="select" name="alt-speed-time-begin" ng-disabled="dataStorage.settings['alt-speed-time-enabled'] === false" ng-options="item.value as item.key for item in dataStorage['speed-limit-times']" ng-model="dataStorage.settings['alt-speed-time-begin']"></select>
+                    </div>
+                    <div>
+                        <label for="alt-speed-time-end">结束时间</label>
+                        <select id="alt-speed-time-end" name="alt-speed-time-end" class="select" ng-disabled="dataStorage.settings['alt-speed-time-enabled'] === false" ng-options="item.value as item.key for item in dataStorage['speed-limit-times']" ng-model="dataStorage.settings['alt-speed-time-end']"></select>
+                    </div>
+                    <div>
+                        <label for="alt-speed-time-day">在下列周期开始计划</label>
+                        <select id="alt-speed-time-day" name="alt-speed-time-day" class="select" ng-disabled="dataStorage.settings['alt-speed-time-enabled'] === false" ng-options="item.value as item.key for item in dataStorage['speed-limit-day']" ng-model="dataStorage.settings['alt-speed-time-day']"></select>
+                    </div>
+                </div>
+            </section>
+            <section class="tag-content tag-content3">
+                <h3>连接数</h3>
+                <div>
+                    <div>
+                        <div>
+                            <label for="peer-limit-per-torrent">每个任务的最大用户数:</label>
+                            <input id="peer-limit-per-torrent" name="peer-limit-per-torrent" class="input" type="text" ng-model="dataStorage.settings['peer-limit-per-torrent']">
+                        </div>
+                        <div>
+                            <label for="peer-limit-global">所有任务最大用户数:</label>
+                            <input id="peer-limit-global" name="peer-limit-global" class="input" type="text" ng-model="dataStorage.settings['peer-limit-global']">
+                        </div>
+                    </div>
+                </div>
+                <h3>选项</h3>
+                <div>
+                    <div>
+                        <label for="encryption">加密</label>
+                        <select id="encryption" name="encryption" class="select" ng-options="item.value as item.key for item in dataStorage['encryption']" ng-model="dataStorage.settings['encryption']"></select>
+                    </div>
+                    <div>
+                        <div>
+                            <input id="pex-enabled" name="pex-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['pex-enabled']">
+                            <label for="pex-enabled">使用 PEX 获取更多的用户</label>
+                        </div>
+                        <div>
+                            <input id="dht-enabled" name="dht-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['dht-enabled']">
+                            <label for="dht-enabled">使用 DHT 获取更多的用户</label>
+                        </div>
+                        <div>
+                            <input id="lpd-enabled" name="lpd-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['lpd-enabled']">
+                            <label for="lpd-enabled">使用 LPD 获取更多的用户</label>
+                        </div>
+                    </div>
+                </div>
+                <h3>拦截列表</h3>
+                <div>
+                    <div>
+                        <input id="blocklist-enabled" name="blocklist-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['blocklist-enabled']">
+                        <label for="blocklist-enabled">开启拦截列表:</label>
+                        <input id="blocklist-url" name="blocklist-url" class="input" type="text" ng-disabled="dataStorage.settings['blocklist-enabled'] === false" ng-model="dataStorage.settings['blocklist-url']">
+                    </div>
+                    <div>
+                        拦截列表有 0 条规则
+                        <button id="blocklist-btn" name="blocklist-btn" ng-disabled="dataStorage.settings['blocklist-enabled'] === false">update</button>
+                    </div>
+                </div>
+            </section>
+            <section class="tag-content tag-content4">
+                <h3>监听端口</h3>
+                <div>
+                    <div>
+                        <div>
+                            <span class="badge">端口 {{dataStorage.settings['peer-port']}} {{dataStorage['port-test'] === false?" 已关闭":" 已打开"}}</span>
+                            <label for="peer-port">用户监听端口:</label>
+                            <input id="peer-port" class="input" type="text" ng-model="dataStorage.settings['peer-port']">
+                        </div>
+                        <div>
+                            <input id="peer-port-random-on-start" class="checkbox" type="checkbox" ng-model="dataStorage.settings['peer-port-random-on-start']">
+                            <label for="peer-port-random-on-start">启动时使用随机端口</label>
+                        </div>
+                        <div>
+                            <input id="port-forwarding-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['port-forwarding-enabled']">
+                            <label for="port-forwarding-enabled">使用路由器的端口转发</label>
+                        </div>
+                    </div>
+                </div>
+                <h3>选项</h3>
+                <div>
+                    <div>
+                        <input id="utp-enabled" class="checkbox" type="checkbox" ng-model="dataStorage.settings['utp-enabled']">
+                        <label for="utp-enabled">为peer通信开启uTP</label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="btn-row" ng-class="{'display-cancel-btn':modal.btnType === 0,'display-submit-btn':modal.btnType === 1,'display-all-btn':modal.btnType === 2}">
+        <div class="cancel" ng-if="modal.btnType === 1 || modal.btnType === 2" ng-click="modal.close()">{{modal.btnText.cancel}}</div>
+        <div class="submit" ng-if="modal.btnType === 0 || modal.btnType === 2" ng-click="modal.submitFunc()">{{modal.btnText.submit}}</div>
+    </div>
+</script>
+<script type="text/html" id="statics">
+    <div class="content">
+        <h2>当前会话</h2>
+        <div class="table">
+            <table>
+                <tbody>
+                <tr>
+                    <th style="width: 200px;">已上传：</th>
+                    <td>{{bytesConvert(dataStorage.stats['current-stats'].uploadedBytes)}}</td>
+                </tr>
+                <tr>
+                    <th>已下载：</th>
+                    <td>{{bytesConvert(dataStorage.stats['current-stats'].downloadedBytes)}}</td>
+                </tr>
+                <tr>
+                    <th>分享率：</th>
+                    <td>{{parseFloat2(dataStorage.stats['current-stats'].uploadedBytes/dataStorage.stats['current-stats'].downloadedBytes)}}</td>
+                </tr>
+                <tr>
+                    <th>运行时长：</th>
+                    <td>{{parseEta(dataStorage.stats['current-stats'].secondsActive)}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>累计</h2>
+        <div class="table">
+            <table>
+                <tbody>
+                <tr>
+                    <th style="width: 200px;">添加过的任务次数：</th>
+                    <td>{{dataStorage.stats['cumulative-stats'].filesAdded}}</td>
+                </tr>
+                <tr>
+                    <th>已上传：</th>
+                    <td>{{bytesConvert(dataStorage.stats['cumulative-stats'].uploadedBytes)}}</td>
+                </tr>
+                <tr>
+                    <th>已下载：</th>
+                    <td>{{bytesConvert(dataStorage.stats['cumulative-stats'].downloadedBytes)}}</td>
+                </tr>
+                <tr>
+                    <th>分享率：</th>
+                    <td>{{parseFloat2(dataStorage.stats['cumulative-stats'].uploadedBytes/dataStorage.stats['cumulative-stats'].downloadedBytes)}}</td>
+                </tr>
+                <tr>
+                    <th>运行时长：</th>
+                    <td>{{parseEta(dataStorage.stats['cumulative-stats'].secondsActive)}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="btn-row display-cancel-btn">
+        <div class="cancel" ng-click="modal.close()">{{modal.btnText.cancel}}</div>
+    </div>
+</script>

@@ -1,0 +1,10 @@
+@mixin css3($cssname,$value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$cssname}: $value;
+  }
+}
+
+@mixin border($boder-direction:border,$boder-width:1px,$color:#ddd,$style:solid) {
+  #{$boder-direction}:$boder-width $style $color;
+}
+

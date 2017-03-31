@@ -1,0 +1,31 @@
+{
+  "short_name": "Transmission Angular",
+  "name": "Transmission 2.92 With Angular",
+  "start_url": "./?utm_source=web_app_manifest",
+  "icons": [
+    {
+      "src": "dist/image/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "dist/image/logo256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "dist/image/logo384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "dist/image/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#4d4d4d",
+  "theme_color": "#4d4d4d",
+  "display": "standalone",
+  "orientation": "portrait"
+}

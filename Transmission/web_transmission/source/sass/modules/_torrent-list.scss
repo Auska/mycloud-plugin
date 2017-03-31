@@ -1,0 +1,160 @@
+.torrent-list{
+  z-index: 9;
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  background-color: $gray-30;
+  >li{
+    list-style: none;
+    //@include yahei();
+    padding: 10px;
+    @include border("border-bottom",1px,lighten($gray-0,35%));
+    @include css3("transition",all 0.3s);
+    will-change: transition;
+    cursor: pointer;
+    &:hover{
+      background-color: lighten($gray-0,33%);
+    }
+    &:last-child{
+      border: none;
+    }
+    >.progess-bar{
+      height: 3px;
+      background-color: lighten($gray-0,40%);
+      >div{
+        height: 3px;
+        @include css3("transition",all 0.5s);
+      }
+    }
+    >.status,>.transform-data{
+      font-size: $font-size-base;
+      color: lighten($gray-0,60%);
+      >span{
+        margin: 0 10px 0 0;
+      }
+    }
+    >.name,>.status,>.progess-bar{
+      margin-bottom: 10px;
+    }
+    >.name{
+      font-size: ceil($font-size-large*1.18);
+      height: ceil($font-size-large*1.3);
+      color: lighten($gray-0,90%);
+      word-break: keep-all;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+      font-family: Roboto;
+      font-weight: 500;
+    }
+    &.rechecking{
+      >.progess-bar{
+        >div{
+          background-color: $prime-red;
+          animation: downloading 1.5s infinite;
+          will-change: animation;
+        }
+      }
+    }
+    &.downloading{
+      >.progess-bar{
+        >div{
+          background-color: $prime-blue;
+          animation: downloading 1.5s infinite;
+          will-change: animation;
+        }
+      }
+    }
+    &.seeding{
+      >.progess-bar{
+        >div{
+          background-color: $prime-green;
+        }
+      }
+    }
+    &.paused{
+      >.progess-bar{
+        >div{
+          background-color: lighten($gray-0,24%);
+          //animation: downloading 1.5s infinite;
+        }
+      }
+    }
+    &.selected{
+      background-color: lighten($gray-0,45%);
+      >.name{
+        color: lighten($gray-0,100%);
+      }
+      >.status,>.transform-data{
+        color: lighten($gray-0,80%);
+      }
+    }
+    &.torrent-list-loading{
+      >.name,>.status,>.transform-data{
+        position: relative;
+        height: 20px;
+        padding: 5px 0;
+        &:before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom:0;
+          right: 80px;
+          background-color: $gray-70;
+          opacity: 0.5;
+        }
+      }
+      >.status{
+        &:before{
+          right:230px;
+        }
+      }
+      >.transform-data{
+        &:before{
+          right:170px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 46px;
+    bottom: 0;
+    z-index: 1;
+    //overflow: inherit;
+  }
+}
+
+@keyframes downloading
+{
+  0% {
+    background-color: $prime-blue;
+  }
+  50% {
+    background-color: lighten($prime-blue,10%);
+  }
+  100% {
+    background-color: $prime-blue;
+  }
+}
+
+@keyframes rechecking
+{
+  0% {
+    background-color: $prime-red;
+  }
+  50% {
+    background-color: lighten($prime-red,10%);
+  }
+  100% {
+    background-color: $prime-red;
+  }
+}

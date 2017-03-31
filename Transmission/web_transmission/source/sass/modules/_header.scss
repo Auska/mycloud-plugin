@@ -1,0 +1,150 @@
+.logo-img{
+  //background-image: url('data:image/png;base64,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');
+  background-image: url("../img/logo.png");
+  background-size: 100% 100%;
+  background-position: 0 0;
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  vertical-align: middle;
+}
+
+.logo {
+  @extend .bg-no-repeat;
+  height: 55px;
+  line-height: 55px;
+  color: $gray-100;
+  @include roboto();
+  font-size: ceil($font-size-large*1.58);
+  >.logo-img{
+    height: 45px;
+    width: 45px;
+    margin: 0 5px;
+  }
+  @media (max-width: 1024px) {
+    display: block !important;
+    padding: 10px 0 10px 25px;
+    height: 140px;
+    line-height: 40px;
+    font-size: ceil($font-size-large*1.20);
+    @include border("border-bottom",1px,$gray-30);
+    background: $gray-10 url("../img/logo_bg.jpg") 0 bottom no-repeat;
+    //background-size: 100% 141px;
+    position: relative;
+    >.logo-img,>i{
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+    }
+    >.logo-img{
+      height: 60px;
+      width: 60px;
+      margin-right: 5px;
+    }
+    >i{
+      bottom: 30px;
+      font-size: ceil($font-size-large*1.58);
+      left: 100px;
+    }
+  }
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+  z-index: 11;
+  >div{
+    background-color: $gray-20;
+    height: 56px;
+    >[class^="icon-"], >[class*=" icon-"]{
+      font-size: ceil($font-size-large*2.2);
+      color: lighten($prime-blue,25%);
+      border-radius: ceil($font-size-large*2.2);
+      @include css3("transition",all 0.3s);
+      &:hover{
+        color: lighten($prime-blue,50%);
+        background-color: $prime-blue;
+      }
+      >i{
+        display: none;
+      }
+      &.disabled{
+        opacity: 0.4;
+        cursor: default;
+        &:hover{
+          color: lighten($prime-blue,25%);
+          background-color: transparent;
+        }
+      }
+    }
+    >span{
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+  &.mobile{
+    @media (max-width: 1024px) {
+      height: 100%;
+      left: 0;
+      width: 100%;
+      box-shadow: none;
+      pointer-events: none;
+      &:before{
+        position: absolute;
+        z-index: 14;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background-color: $gray-0;
+        content: "";
+        transition:opacity 0.233s cubic-bezier(0,0,.21,1);
+        will-change:transition;
+      }
+      >div{
+        position: absolute;
+        z-index: 15;
+        height: 100%;
+        width: 70%;
+        box-shadow: 5px 0 25px rgba(0,0,0,0.5);
+        background-color: $gray-100;
+        left: -75%;
+        @include css3("transition",left 0.23s);
+        will-change: transition,left;
+        >[class^="icon-"], >[class*=" icon-"]{
+          display: block;
+          border-radius: 0;
+          font-size: ceil($font-size-large*1.18);
+          padding: 15px 30px;
+          color: lighten($gray-0,25%);
+          &:hover{
+            color: $gray-100;
+            background-color: $prime-blue;
+          }
+          &:before{
+            display: none;
+          }
+          >i{
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+  &.mobile-show{
+    @media (max-width: 1024px) {
+      pointer-events: auto;
+      left: 0;
+      >div{
+        left: 0;
+      }
+      &:before{
+        opacity:0.5;
+      }
+    }
+  }
+}

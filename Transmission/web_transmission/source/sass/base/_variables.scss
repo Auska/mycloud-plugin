@@ -1,0 +1,93 @@
+@charset "utf-8";
+//color
+$prime-blue:                 	#4779bd;
+$prime-yellow:               	#ff9000;
+$prime-red:                  	#D7534A;
+$prime-purple:			     	#7492c8;
+$prime-green:			     	#34cbd0;
+$toolbar-tool:			     	#d7feff;
+$toolbar-set:			     	#107478;
+$statusbar-bg:                  #25969a;
+$btn-bg:                        #69aeb0;
+
+$progess-bar-done:              #94e1ac;
+$progess-bar-leeching:          #94b1e1;
+$seeding:                       #94e1ac;
+$magnet:                        #ff7e7e;
+
+$black:                      	#000;
+$gray-100:                   	#fff;
+$gray-98:                    	lighten($black,98%);
+$gray-95:                    	lighten($black,95%);
+$gray-90:                    	lighten($black,90%);
+$gray-85:                   	lighten($black,85%);
+$gray-80:                    	lighten($black,80%);
+$gray-70:                    	lighten($black,70%);
+$gray-60:                    	lighten($black,60%);
+$gray-50:                    	lighten($black,50%);
+$gray-40:                    	lighten($black,40%);
+$gray-35:                    	lighten($black,35%);
+$gray-30:                    	lighten($black,30%);
+$gray-20:                    	lighten($black,20%);
+$gray-10:                    	lighten($black,10%);
+$gray-5:                     	lighten($black,5%);
+$gray-0:                     	$black;
+
+//font
+$font-size-base:             	12px;
+$font-size-large:            	14px;
+$font-color-normal:          	#808080;
+$font-color-strong:          	#626262;
+
+$yahei:                         "微软雅黑","雅黑","yahei","黑体","宋体";
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:           	1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:		 	floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//bg color
+$bg-blue:                    	#4980cb;
+$bg-gray:                    	#e6e6e6;
+$bg-green:                   	#6ac989;
+
+$title-side-bg:              	#2a599a;
+$body-side-bg-blue:          	$bg-blue;
+$body-side-bg-gray:          	$bg-gray;
+
+//page
+$page-bg:                    	"../img/nanhai/bg.png";
+$page-bg-color:              	#6ba0cc;
+
+
+//tag
+$tag-bg:                     	$bg-gray;
+$tag-border-color:           	$prime-blue;
+
+//footer
+$footer-bg:                  	#dfdfdf;
+$footer-font-color:          	#848383;
+$footer-font-strong-color:   	$font-color-strong;
+
+//layout
+$layout-margin:              	15px;
+
+
+//content
+$text-link:                  	#348cd7;
+
+
+//header
+$header-color:              	#65f5ff;
+
+
+//sidemenu
+$sidemenu-color:            	#7fd6e6;
+$sidemenu-color-active:     	#397ab2;
+
+
+//border
+$border-color-portal:           #cdd7d1;
+$border-color:					#dadfed;
+$border-base:					1px solid $border-color;
+$border-radius-base:        	4px !default;

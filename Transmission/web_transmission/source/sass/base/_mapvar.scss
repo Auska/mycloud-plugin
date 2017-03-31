@@ -1,0 +1,136 @@
+@charset "utf-8";
+$yahei:					"雅黑", "微软雅黑", "宋体";
+
+$navbar-height:			40px;
+//color
+$sky-blue:				#2192da;
+$sky-blue-dark: 		#1678b7;
+$lemon-yellow: 			#fdb431;
+$lemon-yellow-dark: 	#dd9514;
+$pink-purple: 			#b053b4;
+$pink-purple-dark: 		#9b379f;
+$lake-green: 			#2192da;
+$lake-green-dark: 		#1678b7;
+
+
+//chart
+$chart-purple:			#7492c8;
+$chart-sky:				#4fa3f1;
+$chart-grass:			#6faa5f;
+$chart-yellow:			#ff954f;
+
+//colors
+$prime-blue:			#4978c5;
+$prime-green:			#61c49e;
+$prime-red:				#d7534a;
+$prime-gray:			#a4a4a4;
+$prime-yellow:			#ff954f;
+$prime-purple:			#7492c8;
+
+$th-color:				#476baa;
+
+$white:					#fff;
+
+$text-header:			0066CC;
+$text-error:			#ff0066;
+
+//bg colors
+//$bg-gray:		lighten(#000, 10%) !default;
+
+//$gray-0:		lighten(#000, 0%) !default;
+//$gray-10:		lighten(#000, 10%) !default;
+//$gray-20:		lighten(#000, 20%) !default;
+//$gray-30:		lighten(#000, 30%) !default;
+//$gray-40:		lighten(#000, 40%) !default;
+//$gray-50:		lighten(#000, 50%) !default;
+//$gray-55:		lighten(#000, 55%) !default;
+//$gray-60:		lighten(#000, 60%) !default;
+//$gray-70:		lighten(#000, 70%) !default;
+//$gray-80:		lighten(#000, 80%) !default;
+//$gray-85:		lighten(#000, 85%) !default;
+//$gray-90:		lighten(#000, 90%) !default;
+//$gray-95:		lighten(#000, 95%) !default;
+//$gray-93:		lighten(#000, 93%) !default;
+//$gray-100:		lighten(#000, 100%) !default;
+
+//$bg-white-0:    url(../img/black0.png) 0 0 repeat;
+//$bg-white-10:   url(../img/white10.png) 0 0 repeat;
+//$bg-white-20:   url(../img/white20.png) 0 0 repeat;
+//$bg-white-30:   url(../img/white30.png) 0 0 repeat;
+//$bg-white-40:   url(../img/white40.png) 0 0 repeat;
+//$bg-white-50:   url(../img/white50.png) 0 0 repeat;
+//$bg-white-60:   url(../img/white60.png) 0 0 repeat;
+//$bg-white-70:   url(../img/white70.png) 0 0 repeat;
+//$bg-white-80:   url(../img/white80.png) 0 0 repeat;
+//$bg-white-90:   url(../img/white90.png) 0 0 repeat;
+//$bg-white-100:  url(../img/white100.png) 0 0 repeat;
+//
+//$bg-black-0:    url(../img/black0.png) 0 0 repeat;
+//$bg-black-10:   url(../img/black10.png) 0 0 repeat;
+//$bg-black-20:   url(../img/black20.png) 0 0 repeat;
+//$bg-black-30:   url(../img/black30.png) 0 0 repeat;
+//$bg-black-40:   url(../img/black40.png) 0 0 repeat;
+//$bg-black-50:   url(../img/black50.png) 0 0 repeat;
+//$bg-black-60:   url(../img/black60.png) 0 0 repeat;
+//$bg-black-70:   url(../img/black70.png) 0 0 repeat;
+//$bg-black-80:   url(../img/black80.png) 0 0 repeat;
+//$bg-black-90:   url(../img/black90.png) 0 0 repeat;
+//$bg-black-100:  url(../img/black100.png) 0 0 repeat;
+
+$bg-normal:		#97cbff;
+$bg-error:		#ff0066;
+
+//panel
+$panel-padding:	15px;
+
+//text
+$font-size-base:		14px;
+$font-size-xs:			ceil(($font-size-base * 0.6)) !default; // ~9px
+$font-size-16:			ceil(($font-size-base * 1.1)) !default; // ~9px
+$font-family-songti:    "宋体" !default;
+$font-family-yahei:     "雅黑","微软雅黑","黑体" !default;
+$font-size-halfhuge:	ceil(($font-size-base * 2)) !default; // ~28px
+$font-size-huge:		ceil(($font-size-base * 3)) !default; // ~42px
+
+//navbar-side basics
+$navbar-side-color:             #d7dfed !default;
+$navbar-side-bg:                #476baa !default;
+$navbar-side-border:            1px solid #b3c5e4 !default;
+$navbar-side-width:							230px !default;
+$navbar-side-width-md:          200px !default;
+$navbar-side-noListStyle:       none;
+$navbar-side-list-border:       3px solid #b3c5e4 !default;;
+
+//inverted navbar-side basics
+$navbar-side-inverse-color:     #85a1d1 !default;
+$navbar-side-inverse-bg:        #6b89be !default;
+
+//basics propty
+$zero-px:                       0px !default;
+$box-margin-bottom:             20px !default;
+
+//logo basic
+$logo-height:                   40px !default;
+$logo-padding:                  4px 0px 0 0 !default;
+$logo-font-size:                32px !default;
+$logo-bg:                       #bbc9e2;
+$logo-border-bottom:            1px solid #5f7fb7;
+$logo-font-color:               #d7dfed;
+
+//tables
+$td-50:                         50px;
+
+//btns
+$btn-primary-color:				#fff !default;
+$btn-primary-bg:				$prime-blue !default;
+$btn-primary-border:			darken($btn-primary-bg, 5%) !default;
+
+$brand-yellow:					#ffa200 !default;
+$btn-yellow-color:				#fff !default;
+$btn-yellow-bg:					$brand-yellow !default;
+$btn-yellow-border:				darken($btn-yellow-bg, 5%) !default;
+
+$btn-yellow-color:				#fff !default;
+$btn-yellow-bg:					$brand-yellow !default;
+$btn-yellow-border:				darken($btn-yellow-bg, 5%) !default;
+

@@ -1,0 +1,23 @@
+@mixin yahei() {
+  font-family: $yahei;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin roboto() {
+  font-family: "roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin smoothfont() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin title($size,$color,$backcolor) {
+  background-color: $backcolor;
+  font-size: $size;
+  color: $color;
+  font-weight: bold;
+}

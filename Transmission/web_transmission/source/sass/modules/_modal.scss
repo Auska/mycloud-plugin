@@ -1,0 +1,449 @@
+.modal-bg{
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $gray-0;
+  display: none;
+  opacity: 0;
+  @include css3("transition",opacity 0.5s);
+  &.modal-show{
+    display: block;
+  }
+  &.alpha{
+    opacity: 0.5;
+  }
+}
+.modal{
+  background-color: $gray-100;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  z-index: 21;
+  opacity: 0;
+  display: none;
+  @include css3("transition",all 0.233s);
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  color: $gray-70;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  &.modal-show{
+    display: block;
+  }
+  &.alpha{
+    top: 20%;
+    opacity: 1;
+  }
+  >.title,>.content{
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+  >.title{
+    color: $gray-20;
+    font-weight: 500;
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
+  }
+  >.content{
+    font-size: $font-size-large;
+    overflow: auto;
+    @include clearfix;
+    line-height: 24px;
+    >.icon{
+      float: left;
+      display: block;
+      font-size: ceil($font-size-large*5.5);
+    }
+    @media (max-width: 1024px) {
+      font-size: 17px;
+    }
+  }
+  &.modal-notitle{
+    >.content{
+
+    }
+  }
+  &.size-about,&.size-big,&.size-window{
+    width: 500px;
+    height: 300px;
+    margin: 0 0 0 -250px;
+    @media (max-width: 1024px) {
+      width: 90%;
+      height: 60%;
+      margin: 0 0 0 -45%;
+      >.content{
+        >.icon{
+          float: none;
+          text-align: center;
+        }
+        >div{
+          top: 97px;
+          left: 20px;
+        }
+      }
+    }
+  }
+  &.size-small{
+    width: 400px;
+    height: 180px;
+    margin: 0 0 0 -200px;
+    >.content{
+      height: 50px;
+    }
+    @media (max-width: 1024px) {
+      top: 45%;
+      width: 90%;
+      margin: -20% 0 0 -45%;
+      &.alpha{
+        top: 40%;
+      }
+    }
+  }
+  &.size-about,&.size-big{
+    >.content{
+      height: 170px;
+    }
+    @media (max-width: 1024px) {
+      >.content{
+        height: 310px;
+      }
+      &.alpha {
+        top: 15%;
+      }
+    }
+  }
+  &.size-window{
+    width: 700px;
+    height: 450px;
+    top: 100px;
+    margin: 0 0 0 -350px;
+    &.alpha{
+      top: 50px;
+    }
+    >.content{
+      height: 355px;
+      overflow: hidden;
+      position: relative;
+      >div{
+        position: absolute;
+        top: 58px;
+        left: 0;
+        bottom:0;
+        height: auto;
+        overflow: hidden;
+        width: 400%;
+        @include css3("transition",left 0.233s);
+        will-change: transition,left;
+        >.tags{
+          @include clearfix;
+          margin-bottom: 10px;
+          >li{
+            float: left;
+            padding: 6px 20px;
+            text-align: center;
+            cursor: pointer;
+            @include css3("transition",all 0.233s);
+            will-change: transition;
+            &:hover{
+              color: $gray-30;
+              //border-bottom: 2px solid $gray-80;
+            }
+            &.selected{
+              border-bottom: 2px solid $prime-blue;
+              color: $gray-0;
+              font-weight: bold;
+            }
+          }
+        }
+        &.content1{
+          left: 0;
+        }
+        &.content2{
+          left: -100%;
+        }
+        &.content3{
+          left: -200%;
+        }
+        &.content4{
+          left: -300%;
+        }
+      }
+    }
+    @media (max-width: 1024px) {
+      top: 10%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      margin: 0 ;
+      &.alpha{
+        top: 5%;
+      }
+      >.content{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 58px;
+        height: auto;
+        overflow: hidden !important;
+      }
+    }
+  }
+  >.btn-row{
+    z-index: 22;
+    >div{
+      background-color: $gray-100;
+      color: $gray-0;
+      text-align: center;
+      cursor: pointer;
+      font-size: ceil($font-size-large*1.28);
+      padding: 10px 0;
+      border-radius: 5px;
+      position: relative;
+      @include css3("transition",all 0.3s);
+      will-change: transition;
+      &:hover{
+        background-color: $prime-blue;
+        color: $gray-100;
+      }
+    }
+    &.display-submit-btn,&.display-cancel-btn{
+      >div{
+
+      }
+    }
+    &.display-all-btn{
+      @include clearfix;
+      >div{
+        float: left;
+        width: 50%;
+        &.submit{
+          z-index: 1;
+          &:hover{
+            z-index: 3;
+            background-color: $prime-red;
+          }
+        }
+        &.cancel{
+          z-index: 2;
+          &:hover{
+            z-index: 3;
+            border-color: transparent;
+          }
+        }
+        @media (max-width: 1024px) {
+          &.submit{
+            color: $prime-red;
+          }
+          &.submit,&.cancel{
+            &:hover{
+              color: $gray-0;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1024px){
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+  }
+  &.about,&.statics{
+    line-height: 22px;
+    >.content{
+      height: 220px !important;
+      img,p{
+        text-align: center;
+        color: $gray-50;
+        margin-bottom: 0;
+      }
+      img{
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 10px auto;
+      }
+      a{
+        color: $prime-blue;
+      }
+      @media (max-width: 1024px){
+        height: 280px !important;
+        p{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &.about{
+    >.content{
+      margin-bottom: 0;
+    }
+  }
+  &.statics{
+    >.content{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 58px;
+      height: auto !important;
+      h2{
+        color: $gray-0;
+        margin-bottom: 10px;
+      }
+      >.table{
+        margin-bottom: 10px;
+        table{
+          width: 100%;
+        }
+        th,td{
+          font-size: $font-size-large;
+          text-align: left;
+        }
+      }
+    }
+    >.btn-row{
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+  &.add{
+    height: 360px !important;
+    >.content{
+      height: 230px !important;
+      >div{
+        margin-bottom: 5px;
+      }
+      label{
+        display: inline-block;
+        color: $gray-50;
+        >span{
+          font-size: $font-size-base;
+          color: $gray-60;
+        }
+      }
+      .input,.file{
+        border-radius: 5px;
+        background-color: $gray-100;
+        &:focus{
+          box-shadow: 0 0 5px $prime-blue;
+        }
+        @include border("border",1px,$gray-70);
+        line-height: 20px;
+        padding: 5px 15px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        &:disabled{
+          color: $gray-60;
+          background-color: $gray-90;
+        }
+      }
+      .file{
+        padding: 5px 0;
+        border: none;
+      }
+    }
+  }
+}
+.tags{
+  @include clearfix;
+  margin-bottom: 10px;
+  border-bottom: 2px solid $gray-90;
+  >li{
+    float: left;
+    padding: 6px 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 6;
+    top: 2px;
+    border-bottom: 2px solid transparent;
+    @include css3("transition",all 0.5s);
+    will-change: transition;
+    &:hover{
+      color: $gray-30;
+    }
+    &.selected{
+      border-color: $prime-blue;
+      color: $gray-0;
+      font-weight: bold;
+    }
+  }
+}
+.tag-content{
+  overflow: auto;
+  padding: 0 20px;
+  width: 25%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  &.tag-content1{
+    left: 0;
+  }
+  &.tag-content2{
+    left: 25%;
+  }
+  &.tag-content3{
+    left: 50%;
+  }
+  &.tag-content4{
+    left: 75%;
+  }
+  >h3,>h4{
+    font-weight: bold;
+    font-size: ceil($font-size-large*1.18);
+    color: $gray-40;
+    margin-bottom: 15px;
+  }
+  >h4{
+    font-weight: normal;
+    font-size: ceil($font-size-large);
+  }
+  >div{
+    margin-bottom: 15px;
+    color: $gray-40;
+    >div{
+      margin-bottom: 15px;
+      @include clearfix;
+    }
+  }
+  label,input{
+    vertical-align: middle;
+    line-height: 24px;
+  }
+  .input,.select{
+    border-radius: 5px;
+    background-color: $gray-100;
+    &:focus{
+      box-shadow: 0 0 5px $prime-blue;
+    }
+    @include border("border",1px,$gray-70);
+    line-height: 20px;
+    padding: 5px 15px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    &:disabled{
+      color: $gray-60;
+      background-color: $gray-90;
+    }
+  }
+  .badge{
+    float: right;
+    display: inline-block;
+    color: $gray-0;
+    font-size: $font-size-base;
+    font-weight: bold;
+  }
+}

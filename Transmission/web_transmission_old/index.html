@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10"><!-- ticket #4555 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="./images/favicon.ico" rel="icon"/>
+    <link href="./images/favicon.png" rel="shortcut icon"/>
+    <link rel="apple-touch-icon" href="./images/webclip-icon.png"/>
+    <link media="screen" href="./style/theme_vincent.css" type="text/css" rel="stylesheet"/>
+    <title>Transmission Web Interface</title>
+</head>
+<body id="transmission_body">
+
+<div id="toolbar">
+    <div class="logo">
+        <a href="https://www.transmissionbt.com/" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOcAAAA3CAYAAAGAzW2ZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxMzczZDVkNC1lMzJmLWQ2NDEtODVmNS1lYjg3MDQwYTc0N2UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MkYxQThGNEMzQ0UwMTFFNkE2N0REQjEzRDEwMTk4M0UiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MkYxQThGNEIzQ0UwMTFFNkE2N0REQjEzRDEwMTk4M0UiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZjY4MTJlYzYtOTM2MC1hOTRkLTk2YjktM2EyZTE3NzE1NzYwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjEzNzNkNWQ0LWUzMmYtZDY0MS04NWY1LWViODcwNDBhNzQ3ZSIv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"
+                 alt="Transmission 2.92">
+        </a>
+    </div>
+    <div class="logo-mobile">
+        <a href="https://www.transmissionbt.com/" target="_blank">
+            <img src="data:image/png;base64,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"
+                 alt="Transmission 2.92">
+        </a>
+    </div>
+    <div id="toolbar-open" title="打开种子文件" class="ico"><span class="icon-add"></span></div>
+    <div id="toolbar-remove" title="删除选中的任务" class="ico"><span class="icon-delete"></span></div>
+    <div class="toolbar-separator"></div>
+    <div id="toolbar-start" title="开始下载选中的任务" class="ico"><span class="icon-start-light"></span></div>
+    <div id="toolbar-pause" title="暂停选中的任务" class="ico"><span class="icon-pause-light"></span></div>
+    <div id="toolbar-start-all" title="开始所有任务" class="ico"><span class="icon-start-all-light"></span></div>
+    <div id="toolbar-pause-all" title="暂停所有任务" class="ico"><span class="icon-pause-all-light"></span></div>
+    <div id="toolbar-inspector" title="详情面版" class="toolbar-inspector ico"><span class="icon-info-black"></span></div>
+</div>
+
+<div id="statusbar">
+    <div id='speed-info'>
+        <div id='speed-dn-container'>
+            <span class="icon-download"></span>
+            <div id='speed-dn-label'></div>
+        </div>
+        <div id='speed-up-container'>
+            <span class="icon-upload"></span>
+            <div id='speed-up-label'></div>
+        </div>
+    </div>
+    <div id='filter'>
+        <select id="filter-mode" class="form-select">
+            <option value="all">所有状态</option>
+            <option value="active">Active</option>
+            <option value="downloading">下载中</option>
+            <option value="seeding">正在做种</option>
+            <option value="paused">已暂停</option>
+            <option value="finished">已完成</option>
+        </select>
+        <select id="filter-tracker" class="form-select"></select>
+        <input type="search" id="torrent_search" class="form-inpt" placeholder="输入关键字过滤"/>
+        <span id="filter-count">&nbsp;</span>
+    </div>
+</div>
+
+<div class="ui-helper-hidden" id="prefs-dialog">
+    <ul>
+        <li id="prefs-tab-general"><a href="#prefs-page-torrents">种子</a></li>
+        <li id="prefs-tab-speed"><a href="#prefs-page-speed">速度</a></li>
+        <li id="prefs-tab-peers"><a href="#prefs-page-peers">Peers</a></li>
+        <li id="prefs-tab-network"><a href="#prefs-page-network">网络</a></li>
+        <li class="ui-tab-dialog-close"></li>
+    </ul>
+    <div>
+        <div id="prefs-page-torrents">
+            <div class="prefs-section">
+                <div class="title">下载</div>
+                <div class="row">
+                    <div class="key block">下载目录:</div>
+                    <div class="value block"><input type="text" id="download-dir"/></div>
+                </div>
+                <div class="checkbox-row"><input type="checkbox" id="start-added-torrents"/><label
+                        for="start-added-torrents">添加完成后直接开始下载</label></div>
+                <div class="checkbox-row"><input type="checkbox" id="rename-partial-files"/><label
+                        for="rename-partial-files">对未完成的文件添加 &quot;.part&quot; 后缀名</label></div>
+            </div>
+            <div class="prefs-section">
+                <div class="title">做种</div>
+                <div class="row">
+                    <div class="key block"><input type="checkbox" id="seedRatioLimited"/>
+                        <label for="seedRatioLimited">达到此分享率时停止做种:</label>
+                    </div>
+                    <div class="value block"><input type="number" min="0" id="seedRatioLimit"/></div>
+                </div>
+                <div class="row">
+                    <div class="key block">
+                        <input type="checkbox" id="idle-seeding-limit-enabled"/>
+                        <label for="idle-seeding-limit-enabled">到达此时长以后停止做种:</label>
+                    </div>
+                    <div class="value block"><input type="number" min="0" id="idle-seeding-limit"/></div>
+                </div>
+            </div>
+        </div>
+        <div id="prefs-page-speed">
+            <div class="prefs-section">
+                <div class="title">限速</div>
+                <div class="row">
+                    <div class="key"><input type="checkbox" id="speed-limit-up-enabled"/><label
+                            for="speed-limit-up-enabled">上传 (kB/s):</label></div>
+                    <div class="value"><input type="number" min="0" id="speed-limit-up"/></div>
+                </div>
+                <div class="row">
+                    <div class="key"><input type="checkbox" id="speed-limit-down-enabled"/><label
+                            for="speed-limit-down-enabled">下载 (kB/s):</label></div>
+                    <div class="value"><input type="number" min="0" id="speed-limit-down"/></div>
+                </div>
+            </div>
+            <div class="prefs-section">
+                <div class="title">
+                    <div id="alternative-speed-limits-title">选择性限速</div>
+                </div>
+                <div class="row" id="alternative-speed-limits-desc">覆盖手动限速或者在计划时间内限速</div>
+                <div class="row">
+                    <div class="key">上传 (kB/s):</div>
+                    <div class="value"><input type="number" min="0" id="alt-speed-up"/></div>
+                </div>
+                <div class="row">
+                    <div class="key">下载 (kB/s):</div>
+                    <div class="value"><input type="number" min="0" id="alt-speed-down"/></div>
+                </div>
+                <div class="checkbox-row"><input type="checkbox" id="alt-speed-time-enabled"/><label
+                        for="alt-speed-time-enabled">计划时段</label></div>
+                <div class="row">
+                    <div class="key">开始时间:</div>
+                    <div class="value"><select id="alt-speed-time-begin"></select></div>
+                </div>
+                <div class="row">
+                    <div class="key">结束时间:</div>
+                    <div class="value"><select id="alt-speed-time-end"></select></div>
+                </div>
+                <div class="row">
+                    <div class="key"><label for="alt-speed-time-day">期间:</label></div>
+                    <div class="value"><select id="alt-speed-time-day">
+                        <option value="127">每天</option>
+                        <option value="62">工作日</option>
+                        <option value="65">周末</option>
+                        <option value="1">星期天</option>
+                        <option value="2">星期一</option>
+                        <option value="4">星期二</option>
+                        <option value="8">星期三</option>
+                        <option value="16">星期四</option>
+                        <option value="32">星期五</option>
+                        <option value="64">星期六</option>
+                    </select></div>
+                </div>
+            </div>
+        </div>
+        <div id="prefs-page-peers">
+            <div class="prefs-section">
+                <div class="title">连接数</div>
+                <div class="row">
+                    <div class="key block"><label for="peer-limit-per-torrent">每个种子的最大Peer数:</label></div>
+                    <div class="value block"><input type="number" min="0" id="peer-limit-per-torrent"/></div>
+                </div>
+                <div class="row">
+                    <div class="key block"><label for="peer-limit-global">所有种子累计的最大Peer数:</label></div>
+                    <div class="value block"><input type="number" min="0" id="peer-limit-global"/></div>
+                </div>
+            </div>
+            <div class="prefs-section">
+                <div class="title">选项</div>
+                <div class="row">
+                    <div class="key">加密模式:</div>
+                    <div class="value"><select id="encryption">
+                        <option value="tolerated">允许加密</option>
+                        <option value="preferred">喜欢加密</option>
+                        <option value="required">需要加密</option>
+                    </select></div>
+                </div>
+                <div class="checkbox-row"><input type="checkbox" id="pex-enabled"
+                                                 title="PEX is a tool for exchanging peer lists with the peers you're connected to."/>
+                    <label for="pex-enabled"
+                           title="PEX is a tool for exchanging peer lists with the peers you're connected to.">使用 PEX
+                        查找更多的peers</label></div>
+                <div class="checkbox-row"><input type="checkbox" id="dht-enabled"
+                                                 title="DHT is a tool for finding peers without a tracker."/>
+                    <label for="dht-enabled" title="DHT is a tool for finding peers without a tracker.">使用 DHT
+                        寻找更多的peers</label></div>
+                <div class="checkbox-row"><input type="checkbox" id="lpd-enabled"
+                                                 title="LPD is a tool for finding peers on your local network."/>
+                    <label for="lpd-enabled" title="LPD is a tool for finding peers on your local network.">使用 LPD
+                        寻找更多的peers</label></div>
+            </div>
+            <div class="prefs-section">
+                <div class="title">拦截列表</div>
+                <div class="row">
+                    <div class="key"><input type="checkbox" id="blocklist-enabled"/><label for="blocklist-enabled">开启拦截列表:</label>
+                    </div>
+                    <div class="value"><input type="url" id="blocklist-url"/></div>
+                </div>
+                <div class="row">
+                    <div class="key" id="blocklist-info">拦截列表有 <span id="blocklist-size">?</span> 条规则</div>
+                    <div class="value"><input type="button" id="blocklist-update-button" value="Update"/></div>
+                </div>
+            </div>
+        </div>
+        <div id="prefs-page-network">
+            <div class="prefs-section">
+                <div class="title">监听端口</div>
+                <div class="row">
+                    <div class="key"><label for="peer-port">Peer 监听端口:</label></div>
+                    <div class="value"><input type="number" min="0" max="65535" id="peer-port"/></div>
+                </div>
+                <div class="row">
+                    <div class="key">&nbsp;</div>
+                    <div class="value"><span id="port-label">状态: 未知</span></div>
+                </div>
+                <div class="checkbox-row"><input type="checkbox" id="peer-port-random-on-start"/><label
+                        for="peer-port-random-on-start">启动时使用随机端口</label></div>
+                <div class="checkbox-row"><input type="checkbox" id="port-forwarding-enabled"/><label
+                        for="port-forwarding-enabled">使用路由器的端口转发</label></div>
+            </div>
+            <div class="prefs-section">
+                <div class="title">选项</div>
+                <div class="checkbox-row"><input type="checkbox" id="utp-enabled"
+                                                 title="uTP is a tool for reducing network congestion."/>
+                    <label for="utp-enabled" title="uTP is a tool for reducing network congestion.">为peer通信开启uTP</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui-helper-hidden" id="torrent_inspector">
+
+    <div id="inspector-tabs-wrapper">
+        <div id="inspector-tabs">
+            <div class="inspector-tab selected" id="inspector-tab-info" title="信息"><a href="#info"><span
+                    class="icon-info-light"></span></a></div>
+            <div class="inspector-tab" id="inspector-tab-peers" title="Peers"><a href="#peers"><span
+                    class="icon-people"></span></a></div>
+            <div class="inspector-tab" id="inspector-tab-trackers" title="Trackers"><a href="#trackers"><span
+                    class="icon-server"></span></a></div>
+            <div class="inspector-tab" id="inspector-tab-files" title="文件"><a href="#files"><span
+                    class="icon-checklist"></span></a></div>
+        </div><!-- inspector-tabs -->
+    </div><!-- inspector-tabs-wrapper -->
+
+    <div id="inspector_header">
+        <div id="torrent_inspector_name"></div>
+        <span id="torrent_inspector_size"></span>
+    </div>
+
+    <div class="inspector-page" id="inspector-page-info">
+        <div class="prefs-section">
+            <div class="title">活跃状况</div>
+            <div class="row">
+                <div class="key">下载进度:</div>
+                <div class="value" id="inspector-info-have">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">可用性:</div>
+                <div class="value" id="inspector-info-availability">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">已上传:</div>
+                <div class="value" id="inspector-info-uploaded">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">已下载:</div>
+                <div class="value" id="inspector-info-downloaded">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">状态:</div>
+                <div class="value" id="inspector-info-state">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">运行时长:</div>
+                <div class="value" id="inspector-info-running-time">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">预计还需时长:</div>
+                <div class="value" id="inspector-info-remaining-time">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">上一次活跃:</div>
+                <div class="value" id="inspector-info-last-activity">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">错误:</div>
+                <div class="value" id="inspector-info-error">&nbsp;</div>
+            </div>
+        </div>
+        <div class="prefs-section">
+            <div class="title">明细</div>
+            <div class="row">
+                <div class="key">大小:</div>
+                <div class="value" id="inspector-info-size">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">位置:</div>
+                <div class="value" id="inspector-info-location">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">哈希:</div>
+                <div class="value" id="inspector-info-hash">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">隐私:</div>
+                <div class="value" id="inspector-info-privacy">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">源:</div>
+                <div class="value" id="inspector-info-origin">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="key">备注:</div>
+                <div class="value" id="inspector-info-comment">&nbsp;</div>
+            </div>
+        </div>
+    </div><!-- id="inspector_tab_info_container" -->
+
+    <div class="inspector-page ui-helper-hidden" id="inspector-page-peers">
+        <div id="inspector_peers_list">
+        </div>
+    </div><!-- id="inspector_tab_peers_container" -->
+
+    <div class="inspector-page ui-helper-hidden" id="inspector-page-trackers">
+        <div id="inspector_trackers_list">
+        </div>
+    </div><!-- id="inspector_tab_trackers_container" -->
+
+    <div class="inspector-page ui-helper-hidden" id="inspector-page-files">
+        <ul id="inspector_file_list">
+        </ul>
+    </div><!-- id="inspector_tab_files_container" -->
+
+</div>
+
+<div id="torrent_container">
+    <ul class="torrent_list" id="torrent_list"></ul>
+</div>
+
+<div class="dialog_container ui-helper-hidden" id="dialog_container">
+    <div class="dialog_top_bar"></div>
+    <div class="dialog_window">
+        <div class="dialog_logo" id="dialog_logo"></div>
+        <h2 class="dialog_heading" id="dialog_heading"></h2>
+        <div class="dialog_message" id="dialog_message"></div>
+        <a href="#confirm" id="dialog_confirm_button">确定</a>
+        <a href="#cancel" id="dialog_cancel_button">取消</a>
+    </div>
+</div>
+
+<div class="ui-helper-hidden" id="about-dialog">
+    <p id="about-logo"></p>
+    <p id="about-title">Transmission X</p>
+    <p id="about-blurb">快速、简单易用的 BitTorrent 客户端</p>
+    <p id="about-copyright">Copyright (c) Transmission 项目版权所有</p>
+</div>
+
+<div class="ui-helper-hidden" id="stats-dialog">
+    <div class="prefs-section">
+        <div class="title">当前会话</div>
+        <div class="row">
+            <div class="key">已上传:</div>
+            <div class="value" id='stats-session-uploaded'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">已下载:</div>
+            <div class="value" id='stats-session-downloaded'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">分享率:</div>
+            <div class="value" id='stats-session-ratio'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">运行时长:</div>
+            <div class="value" id='stats-session-duration'>&nbsp;</div>
+        </div>
+    </div>
+    <div class="prefs-section">
+        <div class="title">全部</div>
+        <div class="row">
+            <div class="key">已开始:</div>
+            <div class="value" id='stats-total-count'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">已上传:</div>
+            <div class="value" id='stats-total-uploaded'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">已下载:</div>
+            <div class="value" id='stats-total-downloaded'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">分享率:</div>
+            <div class="value" id='stats-total-ratio'>&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="key">运行时长:</div>
+            <div class="value" id='stats-total-duration'>&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+<div class="dialog_container ui-helper-hidden" id="upload_container">
+    <div class="dialog_top_bar"></div>
+    <div class="dialog_window">
+        <div class="dialog_logo_upload" id="upload_dialog_logo"></div>
+        <h2 class="dialog_heading">上传种子文件</h2>
+        <form action="#" method="post" id="torrent_upload_form"
+              enctype="multipart/form-data" target="torrent_upload_frame">
+            <div class="dialog_message">
+                <label for="torrent_upload_file">选择一个种子文件上传:</label>
+                <input type="file" name="torrent_files[]" id="torrent_upload_file" multiple="multiple"/>
+                <label for="torrent_upload_url">或者输入一个URL:</label>
+                <input type="url" id="torrent_upload_url"/>
+                <label id='add-dialog-folder-label' for="add-dialog-folder-input">存储位置:</label>
+                <input type="text" id="add-dialog-folder-input"/>
+                <input type="checkbox" id="torrent_auto_start"/>
+                <label for="torrent_auto_start" id="auto_start_label">添加成功后就开始下载</label>
+            </div>
+            <a href="#upload" class="confirm" id="upload_confirm_button">上传</a>
+            <a href="#cancel" id="upload_cancel_button">取消</a>
+        </form>
+    </div>
+</div>
+
+<div class="dialog_container ui-helper-hidden" id="rename_container">
+    <div class="dialog_top_bar"></div>
+    <div class="dialog_window">
+        <div class="dialog_logo_rename"></div>
+        <h2 class="dialog_heading">重命名种子</h2>
+        <div class="dialog_message">
+            <label for="torrent_rename_name">输入新名称:</label>
+            <input type="text" id="torrent_rename_name"/>
+        </div>
+        <a href="#rename" class="confirm" id="rename_confirm_button">重命名</a>
+        <a href="#cancel" id="rename_cancel_button">取消</a>
+    </div>
+</div>
+
+<div class="dialog_container ui-helper-hidden" id="move_container">
+    <div class="dialog_top_bar"></div>
+    <div class="dialog_window">
+        <div class="dialog_logo" id="move_dialog_logo"></div>
+        <h2 class="dialog_heading">设置存储位置</h2>
+        <form action="#" method="post" id="torrent_move_form"
+              enctype="multipart/form-data" target="torrent_move_frame">
+            <div class="dialog_message">
+                <label for="torrent_path">位置:</label>
+                <input type="text" id="torrent_path"/>
+            </div>
+            <a href="#move" class="confirm" id="move_confirm_button">应用</a>
+            <a href="#cancel" id="move_cancel_button">取消</a>
+        </form>
+    </div>
+</div>
+
+<div class="torrent_footer">
+    <div id="settings_menu" title="Settings Menu"><span class="icon-config"></span></div>
+    <div id="prefs-button" title="编辑参数..."><span class="icon-settings"></span></div>
+    <div id="turtle-button" title="选择性限速"><span class="icon-scheduled"></span></div>
+    <div id="compact-button" title="折叠列表视图"><span class="icon-listview"></span></div>
+
+    <ul class="ui-helper-hidden menu-top-list" id="footer_super_menu">
+        <li id="about-button">关于Transmission</li>
+        <li>---</li>
+        <li id="homepage">主页</li>
+        <li id="tipjar">捐赠</li>
+        <li>---</li>
+        <li id="statistics">统计</li>
+        <!--
+        <li id="toggle_notifications">Notifcations</li>
+        -->
+        <li>---</li>
+        <li>设置最高下载速度
+            <ul id="footer_download_rate_menu">
+                <li radio-group="download-rate" id="unlimited_download_rate"><span
+                        class='ui-icon ui-icon-bullet'></span>不限速
+                </li>
+                <li radio-group="download-rate" id="limited_download_rate">限速 (10 kB/s)</li>
+                <li>---</li>
+                <li class='download-speed'>5 kB/s</li>
+                <li class='download-speed'>10 kB/s</li>
+                <li class='download-speed'>20 kB/s</li>
+                <li class='download-speed'>30 kB/s</li>
+                <li class='download-speed'>40 kB/s</li>
+                <li class='download-speed'>50 kB/s</li>
+                <li class='download-speed'>75 kB/s</li>
+                <li class='download-speed'>100 kB/s</li>
+                <li class='download-speed'>150 kB/s</li>
+                <li class='download-speed'>200 kB/s</li>
+                <li class='download-speed'>250 kB/s</li>
+                <li class='download-speed'>500 kB/s</li>
+                <li class='download-speed'>750 kB/s</li>
+            </ul>
+        </li>
+        <li>设置最高上传速度
+            <ul id="footer_upload_rate_menu">
+                <li radio-group="upload-rate" id="unlimited_upload_rate"><span class='ui-icon ui-icon-bullet'></span>不限速
+                </li>
+                <li radio-group="upload-rate" id="limited_upload_rate">限速 (10 kB/s)</li>
+                <li>---</li>
+                <li class='upload-speed'>5 kB/s</li>
+                <li class='upload-speed'>10 kB/s</li>
+                <li class='upload-speed'>20 kB/s</li>
+                <li class='upload-speed'>30 kB/s</li>
+                <li class='upload-speed'>40 kB/s</li>
+                <li class='upload-speed'>50 kB/s</li>
+                <li class='upload-speed'>75 kB/s</li>
+                <li class='upload-speed'>100 kB/s</li>
+                <li class='upload-speed'>150 kB/s</li>
+                <li class='upload-speed'>200 kB/s</li>
+                <li class='upload-speed'>250 kB/s</li>
+                <li class='upload-speed'>500 kB/s</li>
+                <li class='upload-speed'>750 kB/s</li>
+            </ul>
+        </li>
+        <li>---</li>
+        <li>对传输任务排序
+            <ul id="footer_sort_menu">
+                <li radio-group="sort-mode" id="sort_by_queue_order">队列顺序</li>
+                <li radio-group="sort-mode" id="sort_by_activity">活跃度</li>
+                <li radio-group="sort-mode" id="sort_by_age">时间</li>
+                <li radio-group="sort-mode" id="sort_by_name">名称</li>
+                <li radio-group="sort-mode" id="sort_by_percent_completed">进度</li>
+                <li radio-group="sort-mode" id="sort_by_ratio">分享率</li>
+                <li radio-group="sort-mode" id="sort_by_size">大小</li>
+                <li radio-group="sort-mode" id="sort_by_state">状态</li>
+                <li>---</li>
+                <li id="reverse_sort_order">反向排序</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<ul class="ui-helper-hidden" id="torrent_context_menu">
+    <li data-command="pause_selected">暂停</li>
+    <li data-command="resume_selected">恢复</li>
+    <li data-command="resume_now_selected">立刻恢复</li>
+    <li>---</li>
+    <li data-command="move_top">移到顶部</li>
+    <li data-command="move_up">向上移</li>
+    <li data-command="move_down">向下移</li>
+    <li data-command="move_bottom">移到底部</li>
+    <li>---</li>
+    <li data-command="remove">从列表中删除…</li>
+    <li data-command="remove_data">删除磁盘数据，以及从列表中移除…</li>
+    <li>---</li>
+    <li data-command="verify">检验本地数据</li>
+    <li data-command="move">设置存放位置…</li>
+    <li data-command="rename">重命名…</li>
+    <li>---</li>
+    <li data-command="reannounce">向tracker问询更多peers</li>
+    <li>---</li>
+    <li data-command="select_all">全选</li>
+    <li data-command="deselect_all">全都不选</li>
+</ul>
+
+<iframe name="torrent_upload_frame" id="torrent_upload_frame" src="about:blank"></iframe>
+<script type="text/javascript" src="./javascript/libs.js"></script>
+<script type="text/javascript" src="./javascript/all.js"></script>
+</body>
+</html>

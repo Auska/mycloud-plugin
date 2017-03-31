@@ -1,0 +1,237 @@
+<script type="text/html" id="detail">
+    <h2>
+        <span ng-if="detail.status" title="{{detail.torrentData.name}}">{{detail.torrentData.name}}</span>
+    </h2>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 0">
+        <h3>活跃状态</h3>
+        <h4 ng-if="echartsLoaded === true">
+            <span ng-class="{'total':detail.chartMaxMode === true}" ng-click="detail.toggleChartMaxMode()"><b>稳定度</b>/<i>上限占比</i></span>
+            <i class="chart-legend-download">下载速度</i>
+            <i class="chart-legend-upload">上传速度</i>
+        </h4>
+        <div id="download-speed-chart" class="download-speed-chart" ng-if="echartsLoaded === true"></div>
+        <div class="table" ng-if="detail.status">
+            <table>
+                <tbody>
+                <tr>
+                    <th>下载进度</th>
+                    <td>
+                        <span>{{bytesConvert(detail.torrentData.totalSize * (detail.torrentData.percentDone < 1 ? detail.torrentData.percentDone : 1)) + "/" + bytesConvert(detail.torrentData.totalSize) }}</span>
+                        <span>{{"(" + (detail.torrentData.percentDone < 1 ? parseFloat2(detail.torrentData.percentDone * 100) : "100") + "%)"}}</span>
+                        <span ng-if="dataStorage.detail.haveUnchecked > 0">未验证：{{bytesConvert(dataStorage.detail.haveUnchecked)}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>已上传</th>
+                    <td>{{bytesConvert(detail.torrentData.uploadedEver)}}</td>
+                </tr>
+                <tr>
+                    <th>已下载</th>
+                    <td>{{bytesConvert(detail.torrentData.totalSize * (detail.torrentData.percentDone < 1 ? detail.torrentData.percentDone : 1))}}</td>
+                </tr>
+                <tr>
+                    <th>状态</th>
+                    <td>{{getStatusText({"status":detail.torrentData.status,"metaComplete":detail.torrentData.metadataPercentComplete})}}</td>
+                </tr>
+                <tr>
+                    <th>运行时长</th>
+                    <td>{{howLong(detail.torrentData.addedDate)}}</td>
+                </tr>
+                <tr>
+                    <th>预计还需时长</th>
+                    <td>{{parseEta(detail.torrentData.eta)}}</td>
+                </tr>
+                <tr>
+                    <th>上一次活跃</th>
+                    <td>{{dataStorage.detail.activityDate === 0?"暂无":getFullDate(dataStorage.detail.activityDate * 1000)}}</td>
+                </tr>
+                <tr>
+                    <th>错误</th>
+                    <td>
+                        <span>{{detail.parseErrorText()}}</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>明细</h3>
+        <div class="table mobile" ng-if="detail.status">
+            <table>
+                <tbody>
+                <tr>
+                    <th>大小</th>
+                    <td>
+                        <span>{{bytesConvert(detail.torrentData.totalSize)}}</span>
+                        <span>({{dataStorage.detail.activityDate.pieceCount + "pieces @" + bytesConvert(dataStorage.detail.pieceSize)}})</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>位置</th>
+                    <td>{{detail.torrentData.downloadDir}}</td>
+                </tr>
+                <tr>
+                    <th>哈希</th>
+                    <td>{{dataStorage.detail.hashString}}</td>
+                </tr>
+                <tr>
+                    <th>私有</th>
+                    <td>{{dataStorage.detail.isPrivate === true ? "私有种子":"公开种子"}}</td>
+                </tr>
+                <tr>
+                    <th>源</th>
+                    <td>
+                        <spaan>创建者 {{dataStorage.detail.creator}}</spaan>
+                        <span>于 {{getFullDate(dataStorage.detail.dateCreated * 1000)}} 创建</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>备注</th>
+                    <td>{{dataStorage.detail.comment}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 1">
+        <ul class="peer-list">
+            <li ng-repeat="item in dataStorage.detail.peers track by $index">
+                <h3>
+                    {{item.address}}
+                    <span ng-if="item.isEncrypted" class="icon-lock"></span>
+                    <i>{{item.clientName}}</i>
+                </h3>
+                <div>
+                    <span class="icon-upload"> {{bytesConvert(item.rateToClient)}} /s</span>
+                    <span class="icon-download"> {{bytesConvert(item.rateToPeer)}} /s</span>
+                    <span>{{item.flagStr}}</span>
+                    <div>
+                        <span>完成度{{item.progress === 1 ? 100 : parseFloat2(item.progress * 100)}}%</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 2">
+        <ul class="tracker-list">
+            <li ng-repeat="item in dataStorage.detail.trackerStats track by $index">
+                <h3>
+                    {{item.announce}}
+                    <i>等级{{item.tier}}</i>
+                </h3>
+                <div>
+                    <i>做种者：{{item.seederCount === -1?"暂无":item.seederCount}}</i>
+                    <span>最近一次发布：{{getFullDate(item.lastAnnounceTime * 1000)}}</span>
+                </div>
+                <div>
+                    <i>下载者：{{item.leecherCount === -1?"暂无":item.leecherCount}}</i>
+                    <span>　下一次发布：{{getFullDate(item.nextAnnounceTime * 1000)}}</span>
+                </div>
+                <div>
+                    <i>下载次数：{{item.downloadCount === -1?"暂无":item.downloadCount}}</i>
+                    <span>最近一次削刮：{{getFullDate(item.lastScrapeTime * 1000)}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 3">
+        <ul class="file-list">
+            <li>
+                <div class="size">
+                    <div class="trigger" id="file-list-trigger-container">
+                        <span class="icon-expand_more" ng-class="{'selected':detail.allPriorityStatus === -1}" ng-click="detail.changePriority({'index':-1,'type':-1})"></span><span class="icon-drag_handle" ng-class="{'selected':detail.allPriorityStatus === 0}" ng-click="detail.changePriority({'index':-1,'type':0})"></span><span class="icon-expand_less" ng-class="{'selected':detail.allPriorityStatus === 1}" ng-click="detail.changePriority({'index':-1,'type':1})"></span>
+                    </div>
+                    全部
+                </div>
+            </li>
+            <li ng-repeat="item in dataStorage.detail.files track by $index">
+                <div class="size">
+                    <div class="trigger">
+                        <span class="icon-expand_more" ng-class="{'selected':dataStorage.detail.fileStats[$index].priority === -1}" ng-click="detail.changePriority({'index':$index,'type':-1})"></span><span class="icon-drag_handle" ng-class="{'selected':dataStorage.detail.fileStats[$index].priority === 0}" ng-click="detail.changePriority({'index':$index,'type':0})"></span><span class="icon-expand_less" ng-class="{'selected':dataStorage.detail.fileStats[$index].priority === 1}" ng-click="detail.changePriority({'index':$index,'type':1})"></span>
+                    </div>
+                    {{bytesConvert(item.bytesCompleted)}} / {{bytesConvert(item.length)}} ({{item.bytesCompleted === item.length ? 100:parseFloat2(item.bytesCompleted / item.length)}}%)
+                </div>
+                <div class="name">{{item.name}}</div>
+            </li>
+        </ul>
+    </div>
+</script>
+<script type="text/html" id="blankDetail">
+    <h2>
+        请选择一个任务
+    </h2>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 0">
+        <h3>活跃状态</h3>
+        <div class="table">
+            <table>
+                <tbody>
+                <tr>
+                    <th>下载进度</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>已上传</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>已下载</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>状态</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>运行时长</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>预计还需时长</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>上一次活跃</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>错误</th>
+                    <td> / </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>明细</h3>
+        <div class="table">
+            <table>
+                <tbody>
+                <tr>
+                    <th>大小</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>位置</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>哈希</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>私有</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>源</th>
+                    <td> / </td>
+                </tr>
+                <tr>
+                    <th>备注</th>
+                    <td> / </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 1"></div>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 2"></div>
+    <div class="deail-contents" ng-show="detail.selectedTabIndex === 3"></div>
+</script>
