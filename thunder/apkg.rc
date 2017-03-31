@@ -1,0 +1,17 @@
+Package:          thunder
+Packager:         Auska
+Email:            843772282@qq.com
+Homepage:         
+Description:      Thunder for WDMyCloud
+Icon:             thunder.png
+AddonShowName:    thunder
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          1.1
+MinFWVer:
+MaxFWVer:
+IndividualFlag:

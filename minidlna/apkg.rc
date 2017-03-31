@@ -1,0 +1,17 @@
+Package:          minidlna
+Packager:         Auska
+Email:            843772282@qq.com
+Homepage:         
+Description:      minidlna for WDMyCloud
+Icon:             minidlna.png
+AddonShowName:    minidlna
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          1.1.5
+MinFWVer:
+MaxFWVer:
+IndividualFlag:

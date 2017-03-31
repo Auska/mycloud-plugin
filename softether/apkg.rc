@@ -1,0 +1,17 @@
+Package:          softether
+Packager:         Auska
+Email:            843772282@qq.com
+Homepage:         
+Description:      softether for WDMyCloud
+Icon:             softether.png
+AddonShowName:    softether
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          1.0.0
+MinFWVer:
+MaxFWVer:
+IndividualFlag:

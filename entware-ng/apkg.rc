@@ -1,0 +1,17 @@
+Package:          entware-ng
+Packager:         Auska
+Email:            843772282@qq.com
+Homepage:         
+Description:      entware-ng for WDMyCloud
+Icon:             entware-ng.png
+AddonShowName:    entware-ng
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          1.0.0
+MinFWVer:
+MaxFWVer:
+IndividualFlag:

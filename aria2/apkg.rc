@@ -1,0 +1,17 @@
+Package:          aria2
+Packager:         Auska
+Email:            843772282@qq.com
+Homepage:         
+Description:      aria2 for WDMyCloud
+Icon:             aria2.png
+AddonShowName:    aria2
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          1.31.0
+MinFWVer:
+MaxFWVer:
+IndividualFlag:

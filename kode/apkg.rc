@@ -1,0 +1,17 @@
+Package:          kode
+Packager:         Auska
+Email:            843772282@qq.com
+Homepage:         
+Description:      kode for WDMyCloud
+Icon:             kode.png
+AddonShowName:    kode
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          3.22
+MinFWVer:
+MaxFWVer:
+IndividualFlag:
