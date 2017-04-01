@@ -1,3 +1,3 @@
-# Transmission 2.92 web UI AngularJSÖØ¹¹°æ
+# Transmission web UI
 
-´ËUIÀ´×Ô[lionzhong](https://github.com/lionzhong/Transmission-WebUI-Angular)¡£
+æ­¤UIæ¥è‡ª[lionzhong](https://github.com/lionzhong/Transmission-UI)ã€‚
