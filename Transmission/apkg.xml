@@ -11,17 +11,17 @@
       <name>Transmission</name>
       <show>Transmission</show>
       <enable>0</enable>
-      <version>2.92</version>
-      <date>20161004</date>
-      <inst_date>10/04/2016 12:48:12</inst_date>
+      <version>2.92-1</version>
+      <date>20170102</date>
+      <inst_date>01/10/2017 19:45:35</inst_date>
       <path>/mnt/HD/HD_a2/Nas_Prog/Transmission</path>
       <ps_name></ps_name>
       <url>index.html</url>
-      <url_port>9092</url_port>
+      <url_port></url_port>
       <apkg_version>2</apkg_version>
-      <packager>Auska</packager>
-      <email></email>
-      <homepage></homepage>
+      <packager>Fox</packager>
+      <email>fox@anionix.ru</email>
+      <homepage>https://anionix.ru</homepage>
       <inst_depend></inst_depend>
       <inst_conflict></inst_conflict>
       <start_depend></start_depend>

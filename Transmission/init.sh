@@ -6,14 +6,15 @@ path=$1
 
 echo "Link file from : "$path
 
-#link library
+# Fix lib's
+cd /lib
+ln -s ld-2.15.so ld-linux-armhf.so.3 2>&1 >/dev/null
 
-#link program,cgi
-ln -sf $path/sbin/transmission-daemon /usr/sbin/transmission-daemon-addon
-ln -sf $path/sbin/transmission-remote /usr/sbin/transmission-remote-addon
-#create a folder for webpage
+# Create links
+ln -sf $path/sbin/transmission-daemon-addon /usr/sbin/transmission-daemon-addon
+ln -sf $path/sbin/transmission-remote-addon /usr/sbin/transmission-remote-addon
+
+# Webpage for WebGUI
 WEBPATH="/var/www/Transmission/"
 mkdir -p $WEBPATH
-
-#webpage,function,css,js,cgi
 ln -sf $path/web/* $WEBPATH
