@@ -10,6 +10,7 @@
 * vlmcsd
 * git
 * ResilioSync
+* SS
 * ~~thunder~~
 
 ## 关于。。。。。。
