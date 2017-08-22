@@ -1,0 +1,15 @@
+Package:            git
+Section:            Addon
+Version:            1.40
+Packager:           Clinton.Hall
+Email:              fock_wulf@hotmail.com
+Homepage:           http://git-scm.com/
+Description:        Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+Icon:               git.png
+AddonShowName:      git      
+AddonIndexPage:     
+AddonUsedPort:      
+InstDepend:         
+InstConflict:       
+StartDepend:        
+StartConflict:      
