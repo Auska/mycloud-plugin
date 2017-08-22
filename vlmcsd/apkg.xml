@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <apkg>
+    <item>
+      <procudt_id>0</procudt_id>
+      <custom_id>20</custom_id>
+      <model_id>2</model_id>
+      <user_control>0</user_control>
+      <center_type>0</center_type>
+      <individual_flag>0</individual_flag>
+      <name>vlmcsd</name>
+      <show>vlmcsd</show>
+      <enable>1</enable>
+      <version>1.11.1</version>
+      <date>20170818</date>
+      <inst_date/>
+      <path/>
+      <ps_name/>
+      <url/>
+      <url_port/>
+      <apkg_version>2</apkg_version>
+      <packager>Auska</packager>
+      <email/>
+      <homepage/>
+      <inst_depend/>
+      <inst_conflict/>
+      <start_depend/>
+      <start_conflict/>
+      <description>vlmcsd for WDMyCloud</description>
+      <icon>vlmcsd.png</icon>
+      <MinFWVer/>
+      <MaxFWVer/>
+    </item>
+  </apkg>
+</config>

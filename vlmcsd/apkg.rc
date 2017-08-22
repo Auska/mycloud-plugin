@@ -1,0 +1,17 @@
+Package:          vlmcsd
+Packager:         Auska
+Email:            
+Homepage:         
+Description:      vlmcsd for WDMyCloud
+Icon:             vlmcsd.png
+AddonShowName:    vlmcsd
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          1.11.1
+MinFWVer:
+MaxFWVer:
+IndividualFlag:
