@@ -1,0 +1,15 @@
+Package:            ResilioSync
+Section:            Addon
+Version:            2.5.7
+Packager:           Resilio, Inc.
+Email:              support@resilio.com
+Homepage:           https://www.resilio.com
+Description:        Fast, private file sharing for teams and individuals. Data moves directly from device to device, skipping the cloud.
+Icon:               ResilioSync.png
+AddonShowName:      Resilio Sync
+AddonIndexPage:     index.html
+AddonUsedPort:
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
