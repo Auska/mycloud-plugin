@@ -1,2 +1,5 @@
 #!/bin/sh
-/shares/Volume_1/Nas_Prog/softether/softether/vpnserver stop
+
+INSTALL_DIR=$1
+
+$INSTALL_DIR/softether/vpnserver stop

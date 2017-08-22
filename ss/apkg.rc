@@ -1,0 +1,17 @@
+Package:          Shadowsocks
+Packager:         Auska
+Email:            
+Homepage:         
+Description:      Shadowsocks for WDMyCloud
+Icon:             Shadowsocks.png
+AddonShowName:    Shadowsocks
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          3.0.8
+MinFWVer:
+MaxFWVer:
+IndividualFlag:
