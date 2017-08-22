@@ -7,6 +7,7 @@
 * entware-ng
 * SoftEther
 * kode
+* vlmcsd
 * ~~thunder~~
 
 ## 关于。。。。。。
