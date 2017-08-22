@@ -11,25 +11,25 @@
       <name>aria2</name>
       <show>aria2</show>
       <enable>1</enable>
-      <version>1.29.0</version>
-      <date>20161121</date>
-      <inst_date>11/21/2016 10:03:47</inst_date>
-      <path>/mnt/HD/HD_a2/Nas_Prog/aria2</path>
-      <ps_name></ps_name>
-      <url></url>
-      <url_port></url_port>
+      <version>1.32.0</version>
+      <date>20170818</date>
+      <inst_date/>
+      <path/>
+      <ps_name/>
+      <url/>
+      <url_port/>
       <apkg_version>2</apkg_version>
       <packager>Auska</packager>
       <email>843772282@qq.com</email>
-      <homepage></homepage>
-      <inst_depend></inst_depend>
-      <inst_conflict></inst_conflict>
-      <start_depend></start_depend>
-      <start_conflict></start_conflict>
+      <homepage/>
+      <inst_depend/>
+      <inst_conflict/>
+      <start_depend/>
+      <start_conflict/>
       <description>aria2 for WDMyCloud</description>
       <icon>aria2.png</icon>
-      <MinFWVer></MinFWVer>
-      <MaxFWVer></MaxFWVer>
+      <MinFWVer/>
+      <MaxFWVer/>
     </item>
   </apkg>
 </config>
