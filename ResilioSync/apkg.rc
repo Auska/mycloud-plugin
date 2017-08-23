@@ -4,7 +4,7 @@ Version:            2.5.7
 Packager:           Resilio, Inc.
 Email:              support@resilio.com
 Homepage:           https://www.resilio.com
-Description:        Fast, private file sharing for teams and individuals. Data moves directly from device to device, skipping the cloud.
+Description:        如果你发现插件不管用了，不要惊讶可能代理服务流量用完了。
 Icon:               ResilioSync.png
 AddonShowName:      Resilio Sync
 AddonIndexPage:     index.html
