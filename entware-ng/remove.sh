@@ -2,5 +2,5 @@
 
 INSTALL_DIR=$1
 
-rm -f /var/www/kode
+rm -rf /var/www/entware
 rm -rf $INSTALL_DIR
