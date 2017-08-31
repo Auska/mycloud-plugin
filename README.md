@@ -11,6 +11,7 @@
 * git
 * ResilioSync
 * SS
+* Docker
 * ~~thunder~~
 
 ## 关于。。。。。。
