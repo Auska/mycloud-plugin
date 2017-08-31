@@ -1,0 +1,17 @@
+Package:          docker
+Packager:         Auska
+Email:            
+Homepage:         
+Description:      docker for WDMyCloud
+Icon:             docker.png
+AddonShowName:    docker
+AddonIndexPage:
+AddonUsedPort:    
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+Version:          17.06.1-ce
+MinFWVer:
+MaxFWVer:
+IndividualFlag:
