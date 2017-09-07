@@ -12,6 +12,7 @@
 * ResilioSync
 * SS
 * Docker
+* zerotier
 * ~~thunder~~
 
 ## 关于。。。。。。
