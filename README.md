@@ -1,18 +1,23 @@
-# WDMyCloud Gen2(及armv7 CPU机型) 拓展插件
+Build for Western Digital MyCloud
+======
 
-## 插件列表
-* Aria2
-* minidlna
-* Transmission
-* entware-ng
-* SoftEther
-* kode
-* vlmcsd
-* git
-* ResilioSync
-* SS
-* Docker
-* zerotier
-* ~~thunder~~
+#### Package Build Instructions:
 
-## 关于。。。。。。
+```
+cd aria2
+../mksapkg -E -s -m MyCloud
+```
+
+### Devices
+	- WDMyCloudEX4: Marvell Kirkwood 88F6282A1 @ 2.0 GHz (single-core)
+	- WDMyCloudEX2: Marvell ARMADA 370 (MV6710) (Single Core ARMv7 @ 1.2 GHz)
+	- WDMyCloudMirror
+	- WDMyCloud
+	- WDMyCloudEX4100
+	- WDMyCloudDL4100
+	- WDMyCloudEX2100
+	- WDMyCloudDL2100
+	- WDMyCloudMirrorGen2
+	- MyCloudEX2Ultra
+	- MyCloudPR4100
+	- MyCloudPR2100
